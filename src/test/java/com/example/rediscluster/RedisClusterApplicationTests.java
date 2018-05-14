@@ -1,5 +1,6 @@
 package com.example.rediscluster;
 
+import com.example.rediscluster.config.RedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,6 +28,17 @@ public class RedisClusterApplicationTests {
         Object name = redisTemplate.opsForValue().get("name");
         log.info("---------------" + name);
     }
+
+
+    @Autowired
+    private RedisService service;
+
+    @Test
+    public void contextLoads() {
+        String name = service.get("name");
+        System.out.println(name);
+    }
+
 
     @Test
     public void redisTest2() {
