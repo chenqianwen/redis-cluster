@@ -22,7 +22,7 @@ public class RedisProperties {
     @Value("${spring.redis.timeout}")
     private int timeout;
 
-    @Value("${spring.redis.password}")
+    //@Value("${spring.redis.password}")
     private String password;
 
     @Value("${spring.redis.database}")
@@ -33,4 +33,10 @@ public class RedisProperties {
 
     @Value("${spring.redis.pool.min-idle}")
     private int minIdle;
+
+    @Value("${spring.redis.sentinel.nodes}")
+    private String sentinelHosts;
+
+    @Value("${spring.redis.sentinel.master}")
+    private String sentinelMaster;
 }
